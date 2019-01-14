@@ -27,3 +27,15 @@
     url: /tmwp/intro/Python
   - title: pandas Basics
     url: /tmwp/intro/Pandas
+
+- title: Working with Text
+    url: /tmwp/text/overview
+    expand_sections: true
+    not_numbered: False
+    sections:
+    - title: Python Basics
+      url: /tmwp/text/Counting
+    not_numbered: true
+    - title: pandas Basics
+      url: /tmwp/text/Sentiment
+    not_numbered: true
