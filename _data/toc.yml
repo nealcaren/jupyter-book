@@ -63,6 +63,3 @@
   - title: Connecting content with JupyterHub and Binder
     url: /features/interact
     not_numbered: true
-  - title: Citations and bibliographies
-    url: /features/citations
-    not_numbered: true
