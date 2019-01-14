@@ -7,8 +7,8 @@ prev_page:
   url: /tmwp/intro/Python
   title: 'Python Basics'
 next_page:
-  url: 
-  title: ''
+  url: /tmwp/text/overview
+  title: 'Working with Text'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
