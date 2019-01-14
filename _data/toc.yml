@@ -21,12 +21,14 @@
 - title: Getting started
   url: /tmwp/intro/overview
   expand_sections: true
-  not_numbered: true
+  not_numbered: False
   sections:
   - title: Python Basics
     url: /tmwp/intro/Python
+    not_numbered: true
   - title: pandas Basics
     url: /tmwp/intro/Pandas
+    not_numbered: true
 
 - title: Working with Text
   url: /tmwp/text/overview
@@ -34,8 +36,8 @@
   not_numbered: False
   sections:
   - title: Python Basics
-    url: /tmwp/text/Counting
+    url: /tmwp/text/counting
     not_numbered: true
   - title: pandas Basics
-    url: /tmwp/text/Sentiment
+    url: /tmwp/text/sentiment
     not_numbered: true
