@@ -1,8 +1,8 @@
 ---
 title: 'Features and customization'
 prev_page:
-  url: /guide/07_advanced
-  title: 'How-to and advanced topics'
+  url: /tmwp/Text-Counting
+  title: 'TMWP'
 next_page:
   url: /features/markdown
   title: 'Markdown files'
