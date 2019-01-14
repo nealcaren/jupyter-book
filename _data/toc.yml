@@ -21,6 +21,7 @@
 - title: Getting started
   url: /tmwp/intro/overview
   expand_sections: true
+  not_numbered: true
   sections:
   - title: Python Basics
     url: /tmwp/intro/Python
