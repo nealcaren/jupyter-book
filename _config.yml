@@ -58,11 +58,11 @@ binder_repo_base                 : "https://github.com/"  # The site on which th
 binder_repo_org                  : "nealcaren"  # The username or organization that owns this repository
 binder_repo_name                 : "jupyter-book"  # The name of the repository on the web
 binder_repo_branch               : "master"  # The branch on which your textbook is hosted.
-binderhub_interact_text          : "Live"  # The text that interact buttons will contain.
+binderhub_interact_text          : "Notebook"  # The text that interact buttons will contain.
 
 # Thebelab settings
 use_thebelab_button              : true  # If 'true', display a button to allow in-page running code cells with Thebelab
-thebelab_button_text             : "Thebelab"  # The text to display inside the Thebelab initialization button
+thebelab_button_text             : "Interactive"  # The text to display inside the Thebelab initialization button
 
 
 #######################################################################################
