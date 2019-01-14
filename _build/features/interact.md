@@ -5,8 +5,8 @@ prev_page:
   url: /features/hiding
   title: 'Hiding code blocks or entire cells'
 next_page:
-  url: /features/citations
-  title: 'Citations and bibliographies'
+  url: 
+  title: ''
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
