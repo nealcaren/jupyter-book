@@ -41,3 +41,35 @@
   - title: Web APIs
     url: placeholder
     not_numbered: true
+  - title: Web Scraping
+    url: placeholder
+    not_numbered: true
+
+- title: Counting words
+  url: placeholder
+  expand_sections: true
+  not_numbered: False
+  sections:
+  - title: Frequencies
+    url: placeholder
+    not_numbered: true
+  - title: Sentiment
+    url: placeholder
+    not_numbered: true
+  - title: Part of speech tagging
+    url: placeholder
+    not_numbered: true
+
+- title: Classification
+  url: placeholder
+  expand_sections: true
+  not_numbered: False
+
+- title: Appendix
+  url: placeholder
+  expand_sections: true
+  not_numbered: False
+  sections:
+  - title: Pipelines
+    url: placeholder
+    not_numbered: true
