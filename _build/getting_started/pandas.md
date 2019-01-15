@@ -12,9 +12,6 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-## pandas
-
-
 
 This section provides a brief introduction to pandas. The pandas library is a key component for doing data science in Python for a couple of reasons. Most importantly, it provides two data types, series and data frame, that allow you to store and manipulate data in a way that is useful for analysis. Second, it is incredibly useful for importing and exporting data in a wide variety of formats. Finally, it makes descriptive analysis, including both summary statistics and visualizations. This section provides an introduction to the main capabilities of pandas relevant to data analysis. 
 
@@ -30,7 +27,7 @@ import pandas as pd
 ```
 
 
-### Reading data
+## Reading data
 
 In the summer of 2017, the Washington Post produced a [report](https://www.washingtonpost.com/graphics/2018/investigations/unsolved-homicide-database/) on murder clearance rates by cities. The also released the [data](https://github.com/washingtonpost/data-homicides) they collected on Github as a csv file. We can create a new dataframe, called `df`, using the [pandas](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) `read_csv` method.  
 
@@ -58,7 +55,7 @@ df = pd.read_csv(csv_url)
 
 Pandas has a suite of methods for importing a variety of file formats, discussed in the `Bonus_File_Reading` section.
 
-#### Learning about your dataframe
+## Learning about your dataframe
 
 After loading a dataframe, best practice is to get a sense of the data with the `head`, `info` and `describe` methods. `head` shows the first five rows of the dataframe.
 
@@ -440,12 +437,7 @@ df.tail(3)
 
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Display the first four rows of the dataframe <code>df</code>.  
-</div>
-
-### Working with variables
+## Working with variables
 
 
 We can get some descriptive statistics on the variable using `describe`. The dataframe can be subset to just this series by placing the variable name in brackets. 
@@ -708,19 +700,7 @@ str
 
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Explore the <code>disposition</code> columns in the dataframe.  
-</div>
-
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> A well-known data set is the list of titanic passengers. A version can be found in the data folder called, "titanic.csv". Open the file as a new dataframe <code>titanic_df</code>. How many cases? How many columns? What can you find out about the data?
-
-</div>
-
-
-#### Conversions
+### Conversions
 
 
 
@@ -844,14 +824,7 @@ Name: victim_age_numeric, Length: 52179, dtype: float64
 
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Display seven value from the middle of our new age variable?
-
-</div>
-
-
-### Plots
+## Plots
 
 pandas also has plotting capabilies, such as histograms (`hist`) and a correlation matrix (`scatter_matrix`).  These are essential tools for understanding the data.
 
@@ -875,7 +848,7 @@ df['victim_age_numeric'].hist()
 
 
 {:.output .output_png}
-![png](../images/getting_started/pandas_50_1.png)
+![png](../images/getting_started/pandas_45_1.png)
 
 
 
@@ -907,7 +880,7 @@ df.plot.scatter(x='lon', y='lat')
 
 
 {:.output .output_png}
-![png](../images/getting_started/pandas_54_1.png)
+![png](../images/getting_started/pandas_49_1.png)
 
 
 
@@ -965,7 +938,7 @@ array([[<matplotlib.axes._subplots.AxesSubplot object at 0x11e5f7b70>,
 
 
 {:.output .output_png}
-![png](../images/getting_started/pandas_58_1.png)
+![png](../images/getting_started/pandas_53_1.png)
 
 
 
@@ -996,7 +969,7 @@ array([[<matplotlib.axes._subplots.AxesSubplot object at 0x11f86a668>,
 
 
 {:.output .output_png}
-![png](../images/getting_started/pandas_60_1.png)
+![png](../images/getting_started/pandas_55_1.png)
 
 
 
@@ -1029,7 +1002,7 @@ array([[<matplotlib.axes._subplots.AxesSubplot object at 0x11e8760b8>,
 
 
 {:.output .output_png}
-![png](../images/getting_started/pandas_62_1.png)
+![png](../images/getting_started/pandas_57_1.png)
 
 
 
@@ -1055,7 +1028,7 @@ df['victim_race'].value_counts().plot(kind = 'barh')
 
 
 {:.output .output_png}
-![png](../images/getting_started/pandas_64_1.png)
+![png](../images/getting_started/pandas_59_1.png)
 
 
 
