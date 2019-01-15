@@ -15,29 +15,29 @@
 #   in the sidebar. All other values are ignored.
 
 - title: Home
-  url: /tmwp/welcome
+  url: welcome
   not_numbered: true
 
 - title: Getting started
-  url: /tmwp/intro/overview
+  url: getting_started/overview
   expand_sections: true
   not_numbered: False
   sections:
-  - title: Python Basics
-    url: /tmwp/intro/Python
+  - title: Python 101
+    url: getting_started/python
     not_numbered: true
-  - title: pandas Basics
-    url: /tmwp/intro/Pandas
+  - title: pandas 101
+    url: getting_started/pandas
     not_numbered: true
 
-- title: Working with Text
-  url: /tmwp/text/overview
+- title: Collecting texts
+  url: placeholder
   expand_sections: true
   not_numbered: False
   sections:
-  - title: Python Basics
-    url: /tmwp/text/counting
+  - title: From files
+    url: placeholder
     not_numbered: true
-  - title: pandas Basics
-    url: /tmwp/text/sentiment
+  - title: Web APIs
+    url: placeholder
     not_numbered: true
