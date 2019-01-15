@@ -1032,7 +1032,7 @@ df['victim_race'].value_counts().plot(kind = 'barh')
 
 
 
-#### Other descriptives
+## Other descriptives
 
 Pandas also has a method for producing crosstabs. 
 
@@ -1045,80 +1045,27 @@ pd.crosstab(df['victim_race'], df['disposition'])
 
 
 
+{:.output .output_traceback_line}
+```
+---------------------------------------------------------------------------
+```
 
+{:.output .output_traceback_line}
+```
+NameError                                 Traceback (most recent call last)
+```
 
-<div markdown="0" class="output output_html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+{:.output .output_traceback_line}
+```
+<ipython-input-1-8fd97d59d68d> in <module>
+----> 1 pd.crosstab(df['victim_race'], df['disposition'])
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+```
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>disposition</th>
-      <th>Closed by arrest</th>
-      <th>Closed without arrest</th>
-      <th>Open/No arrest</th>
-    </tr>
-    <tr>
-      <th>victim_race</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Asian</th>
-      <td>410</td>
-      <td>72</td>
-      <td>203</td>
-    </tr>
-    <tr>
-      <th>Black</th>
-      <td>15462</td>
-      <td>1496</td>
-      <td>16403</td>
-    </tr>
-    <tr>
-      <th>Hispanic</th>
-      <td>3332</td>
-      <td>401</td>
-      <td>3168</td>
-    </tr>
-    <tr>
-      <th>Other</th>
-      <td>366</td>
-      <td>30</td>
-      <td>304</td>
-    </tr>
-    <tr>
-      <th>Unknown</th>
-      <td>2145</td>
-      <td>320</td>
-      <td>1734</td>
-    </tr>
-    <tr>
-      <th>White</th>
-      <td>3959</td>
-      <td>603</td>
-      <td>1771</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
+{:.output .output_traceback_line}
+```
+NameError: name 'pd' is not defined
+```
 
 
 Note that since this is a pandas method, and not one of a specific dataframe, you need to be explicit about which datatframe each variable is coming from. That is why the first parameter is not `'victim_race'` but `df['victim_race']`. 
@@ -1307,13 +1254,6 @@ cross_tab.to_csv('data/crosstab.csv')
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> In your titanic dataframe, run a crosstab between sex and survived. Anything interesting?
-
-</div>
-
-
 In order to highlight a meaningful characteristics of the data, you can sort before plotting. 
 
 
@@ -1333,7 +1273,7 @@ cross_tab.sort_values(by='Closed by arrest').plot(kind   = 'barh',
 ```
 
 
-#### Subsets
+## Subsets
 
 Similar to a list, a dataframe or series can be sliced to subset the data being shown. For example, `df[:2]` will return the first two rows of the dataframe. (This is identical to `df.head(2)`.)
 
@@ -1363,7 +1303,7 @@ df['reported_date'][:3]
 ```
 
 
-#### Dates
+## Dates
 
 A new variable can be created from `reported_date` that pandas understands is a date variable using the `to_datetime` method. The format is `%Y%m%d` because the original date is in the "YYYMMDD" format, and `coerce` places missing values where the data can be translated, rather than stopping the variable creation completely. 
 
@@ -1456,14 +1396,7 @@ df[:5]
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> In your Titanic dataframe, set the index to the <code>PassengerId</code> column. Confirm that it did want you wanted it to do.
-
-</div>
-
-
-#### Subseting
+### Subseting
 
 You can view a subset of a dataframe based on the value of a column. 
 
@@ -1542,14 +1475,7 @@ df_2016['year'].value_counts()
 
 Alternatively you may want to limit your dataset by column. In this case, you create a list of the columns you want. This list is also placed in brackets after the dataframe name.
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new dataframe with just the female passengers. Check your work.
-
-</div>
-
-
-#### More subsets
+### More subsets
 
 
 
@@ -1603,7 +1529,7 @@ place_df.head()
 ```
 
 
-#### Merging
+## Merging
 
 There are several different ways to combine datasets. The most straightforward is to merge two different datasets who share a key in common. To merge `place_df` with  `victim_df`, for example, you can use the datframe `merge` method. 
 
@@ -1692,13 +1618,6 @@ df['minor'].mean()
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new variable in your Titanic dataframe which marks the people who paid a fare in the top 25% of all fares paid.
-
-</div>
-
-
 
 
 {:.input_area}
@@ -1724,7 +1643,7 @@ title_case('JUAN')
 ```
 
 
-### The apply magic
+## The apply magic
 
 
 
@@ -1751,7 +1670,6 @@ df[['victim_first', 'victim_first2']].head(10)
 
 
 <div class="alert alert-info">
-<h3> Your turn</h3>
 <p> Write a function that extracts the last name from the name field on your Titanic dataframe. 
 Create a new variable called <code>Family Name</code> to store the results. What is the most common family name?
 
