@@ -24,7 +24,7 @@
   not_numbered: False
   sections:
   - title: Installation
-    url:   url: placeholder
+    url: placeholder
     not_numbered: true
   - title: Python 101
     url: getting_started/python
