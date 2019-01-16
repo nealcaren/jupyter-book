@@ -4,8 +4,8 @@ redirect_from:
 interact_link: content/getting_started/python.ipynb
 title: 'Python 101'
 prev_page:
-  url: /getting_started/overview
-  title: 'Getting started'
+  url: /placeholder
+  title: 'Installation'
 next_page:
   url: /getting_started/pandas
   title: 'pandas 101'

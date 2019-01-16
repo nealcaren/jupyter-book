@@ -1669,11 +1669,10 @@ df[['victim_first', 'victim_first2']].head(10)
 ```
 
 
-<div class="alert alert-info">
-<p> Write a function that extracts the last name from the name field on your Titanic dataframe. 
-Create a new variable called <code>Family Name</code> to store the results. What is the most common family name?
+### Exercise
 
-</div>
+Write a function that extracts the last name from the name field on your Titanic dataframe. 
+Create a new variable called <code>Family Name</code> to store the results. What is the most common family name?
 
 
 Working on more than one column
@@ -1700,6 +1699,30 @@ df.apply(victim_name, axis=1)
 
 
 
+{:.output .output_traceback_line}
+```
+---------------------------------------------------------------------------
+```
+
+{:.output .output_traceback_line}
+```
+NameError                                 Traceback (most recent call last)
+```
+
+{:.output .output_traceback_line}
+```
+<ipython-input-3-bee86a03d99d> in <module>
+----> 1 df.apply(victim_name, axis=1)
+
+```
+
+{:.output .output_traceback_line}
+```
+NameError: name 'df' is not defined
+```
+
+
+
 
 {:.input_area}
 ```python
@@ -1715,12 +1738,7 @@ df.head()
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> What did we learn today? Can you use any of this on a dataset that already work on?
-</div>
-
-### Encodings
+## Bonus: Encodings
 
 Text files may also include special characters, such as 😎 which can be written as `\U0001f60e`
 

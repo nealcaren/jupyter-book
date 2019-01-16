@@ -4,10 +4,10 @@ redirect_from:
 title: 'Getting started'
 prev_page:
   url: /welcome
-  title: 'Home'
+  title: 'Introduction'
 next_page:
-  url: /getting_started/python
-  title: 'Python 101'
+  url: /placeholder
+  title: 'Installation'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 This short section introduces the basics of Python and pandas
