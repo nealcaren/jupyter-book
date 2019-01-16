@@ -14,7 +14,7 @@
 # divider: true if this entry should just be rendered as a horizontal divider
 #   in the sidebar. All other values are ignored.
 
-- title: Home
+- title: Introduction
   url: welcome
   not_numbered: true
 
@@ -23,6 +23,9 @@
   expand_sections: true
   not_numbered: False
   sections:
+  - title: Installation
+    url:   url: placeholder
+    not_numbered: true
   - title: Python 101
     url: getting_started/python
     not_numbered: true
