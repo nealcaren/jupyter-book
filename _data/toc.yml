@@ -39,13 +39,13 @@
   not_numbered: False
   sections:
   - title: From files
-    url: placeholder
+    url: collecting/file_reading
     not_numbered: true
   - title: Web APIs
-    url: placeholder
+    url: collecting/apis
     not_numbered: true
   - title: Web Scraping
-    url: placeholder
+    url: collecting/scraping
     not_numbered: true
 
 - title: Counting words
@@ -54,22 +54,29 @@
   not_numbered: False
   sections:
   - title: Frequencies
-    url: placeholder
+    url: counting/counting
     not_numbered: true
   - title: Sentiment
-    url: placeholder
+    url: counting/sentiment
     not_numbered: true
   - title: Part of speech tagging
     url: placeholder
     not_numbered: true
 
-- title: Classification
+- title: Analysis
   url: placeholder
   expand_sections: true
   not_numbered: False
+  sections:
+  - title: Classification
+    url: analysis/classify
+    not_numbered: true
+  - title: Topic Models
+    url: analysis/topicmodels
+    not_numbered: true
 
 - title: Appendix
-  url: placeholder
+  url: appendix/pipeline
   expand_sections: true
   not_numbered: False
   sections:
