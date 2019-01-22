@@ -125,14 +125,6 @@ Create a new string called <code>food</code>  that is a sentence about your most
 
 {:.input_area}
 ```python
-food = 
-```
-
-
-
-
-{:.input_area}
-```python
  
 ```
 
@@ -154,7 +146,7 @@ sentence.lower()
 
 {:.output .output_data_text}
 ```
-'democracy in a nation of 300 million people can be noisy and messy and complicated.'
+'let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
@@ -174,7 +166,7 @@ sentence
 
 {:.output .output_data_text}
 ```
-'Democracy in a nation of 300 million people can be noisy and messy and complicated.'
+'Let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
@@ -196,15 +188,21 @@ lower_sentence
 
 {:.output .output_data_text}
 ```
-'democracy in a nation of 300 million people can be noisy and messy and complicated.'
+'let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new, lower cased version of your <code>food</code> string.
-</div>
+### Your turn
+Create a new, lower cased version of your <code>food</code> string.
+
+
+
+{:.input_area}
+```python
+ 
+```
+
 
 We can also `replace` words within the string.
 
@@ -221,12 +219,12 @@ sentence.replace("nation", "country")
 
 {:.output .output_data_text}
 ```
-'Democracy in a country of 300 million people can be noisy and messy and complicated.'
+'Let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
 
-`replace` can also be used to remove text without replacement.
+`replace` can also be used to remove text by not including anything with the replacement quotation marks.
 
 
 
@@ -241,7 +239,7 @@ sentence.replace(".", "")
 
 {:.output .output_data_text}
 ```
-'Democracy in a nation of 300 million people can be noisy and messy and complicated'
+'Let us invest in our people without leaving them a mountain of debt'
 ```
 
 
@@ -262,6 +260,12 @@ print(edited_sentence)
 ```
 
 
+{:.output .output_stream}
+```
+let us invest in our people without leaving them a mountain of debt.
+
+```
+
 If you were doing a series of manipulations, you could reuse a varaiable name, although it is best practices to keep a version of the original string in case you ever need to go back to it. 
 
 
@@ -276,6 +280,13 @@ print(edited_sentence)
 ```
 
 
+{:.output .output_stream}
+```
+let us invest in our people without leaving them a mountain of debt.
+let us invest in our people without leaving them a mountain of debt
+
+```
+
 You can also stack multiple transformations together, although combining too many may make your code harder to follow.
 
 
@@ -286,12 +297,29 @@ edited_sentence.replace(".", "").lower()
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new string called <code>boring</code> that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
-</div>
 
-### Slicing
+
+
+{:.output .output_data_text}
+```
+'let us invest in our people without leaving them a mountain of debt'
+```
+
+
+
+### Your turn
+Create a new string called <code>boring</code> that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
+
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
+## Slicing
 
 If you had a very long text, such as the entire text of the State of the Union, you might only want to look at the first few characters. In Python, this is called by slicing.
 
@@ -305,10 +333,30 @@ sentence
 
 
 
+
+{:.output .output_data_text}
+```
+'Let us invest in our people without leaving them a mountain of debt.'
+```
+
+
+
+
+
 {:.input_area}
 ```python
 sentence[0:20]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Let us invest in our'
+```
+
 
 
 A slice is signaled with brackets (`[]`). The first number is the starting position, where 0 indicates the beginning. This is followed by a colon (`:`) and then the end position, which, in this case, is a 20. Note that this is splitting on characters, not words.
@@ -323,6 +371,16 @@ sentence[20:32]
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+' people with'
+```
+
+
+
 For convience, if you ommit the number before the colon, it defaults to the string beginning.
 
 
@@ -331,6 +389,16 @@ For convience, if you ommit the number before the colon, it defaults to the stri
 ```python
 sentence[:40]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Let us invest in our people without leav'
+```
+
 
 
 Ommitting the second number defaults to the end.
@@ -343,6 +411,16 @@ sentence[40:]
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'ing them a mountain of debt.'
+```
+
+
+
 Finally, negative numbers are interpreted as distance from the end of the string.
 
 
@@ -353,13 +431,22 @@ sentence[-20:]
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
+
+
+
+{:.output .output_data_text}
+```
+' a mountain of debt.'
+```
+
+
+
+### Your turn
 <p> Create a new string called <code>s</code> that contains <code>The weather is hot and humid today.</code> Find the slices for each of the following :
 <ul>
-    <li> <code>The we</code> </item>
-    <li> <code>today.</code>
-    <li> <code>hot and humid</code>
+    <li> "The we"</item>
+    <li> "today."</item>
+    <li> "hot and humid"</item>
 </ul>
 
 </div>
