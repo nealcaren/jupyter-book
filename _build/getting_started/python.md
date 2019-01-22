@@ -319,6 +319,21 @@ Create a new string called <code>boring</code> that removes the exclamation mark
 ```
 
 
+
+
+{:.input_area .hidecode}
+```python
+boring = "Way to go!!!".lower().replace('!', '')
+print(boring)
+```
+
+
+{:.output .output_stream}
+```
+way to go
+
+```
+
 ## Slicing
 
 If you had a very long text, such as the entire text of the State of the Union, you might only want to look at the first few characters. In Python, this is called by slicing.
@@ -442,14 +457,11 @@ sentence[-20:]
 
 
 ### Your turn
-<p> Create a new string called <code>s</code> that contains <code>The weather is hot and humid today.</code> Find the slices for each of the following :
-<ul>
-    <li> "The we"</item>
-    <li> "today."</item>
-    <li> "hot and humid"</item>
-</ul>
+Create a new string called `s` that contains `The weather is hot and humid today.` Find the slices for each of the following :
+* "The we"
+* "today."
+* "hot and humid"
 
-</div>
 
 #### Numbers
 
