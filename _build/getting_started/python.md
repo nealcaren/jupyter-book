@@ -121,6 +121,22 @@ Let's invest in our people without leaving them a mountain of debt.
 Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
 
 
+
+
+{:.input_area}
+```python
+food = 
+```
+
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
 ## Strings
 
 Python has a few tools for manipulating text, such as `lower` for making the string lower-case.
