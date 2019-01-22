@@ -12,9 +12,8 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-# Python Basics
+## Python 101
 
- 
 
 
 This section introduces some of the most relevant aspects of working with Python for social scientists. This includes the different data types available and ways to modify them. 
@@ -29,7 +28,7 @@ To store that in Python, create a new variable called `sentence`
 
 {:.input_area}
 ```python
-sentence =  'Democracy in a nation of 300 million people can be noisy and messy and complicated.'
+sentence =  'Let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
@@ -49,7 +48,7 @@ sentence
 
 {:.output .output_data_text}
 ```
-'Democracy in a nation of 300 million people can be noisy and messy and complicated.'
+'Let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
@@ -68,7 +67,7 @@ print(sentence)
 
 {:.output .output_stream}
 ```
-Democracy in a nation of 300 million people can be noisy and messy and complicated.
+Let us invest in our people without leaving them a mountain of debt.
 
 ```
 
@@ -78,7 +77,7 @@ The only difference is that the first response was wrapped in single quotes and 
 
 {:.input_area}
 ```python
-sentence =  "Democracy in a nation of 300 million people can be noisy and messy and complicated."
+sentence =  "Let us invest in our people without leaving them a mountain of debt."
 
 sentence
 ```
@@ -89,7 +88,7 @@ sentence
 
 {:.output .output_data_text}
 ```
-'Democracy in a nation of 300 million people can be noisy and messy and complicated.'
+'Let us invest in our people without leaving them a mountain of debt.'
 ```
 
 
@@ -100,7 +99,7 @@ In addition to `'` and `"`, strings can also be marked with a `'''`. This last o
 
 {:.input_area}
 ```python
-new_sentence = '''President Obama also said, "Again, we are tested. And again, we must answer history's call."'''
+new_sentence = '''Let's invest in our people without leaving them a mountain of debt.'''
 ```
 
 
@@ -114,16 +113,15 @@ print(new_sentence)
 
 {:.output .output_stream}
 ```
-President Obama also said, "Again, we are tested. And again, we must answer history's call."
+Let's invest in our people without leaving them a mountain of debt.
 
 ```
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
-</div>
+### Your turn
+Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
 
-#### Strings
+
+## Strings
 
 Python has a few tools for manipulating text, such as `lower` for making the string lower-case.
 
