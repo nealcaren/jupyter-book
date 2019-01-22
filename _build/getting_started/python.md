@@ -319,21 +319,6 @@ Create a new string called <code>boring</code> that removes the exclamation mark
 ```
 
 
-
-
-{:.input_area .hidecode}
-```python
-boring = "Way to go!!!".lower().replace('!', '')
-print(boring)
-```
-
-
-{:.output .output_stream}
-```
-way to go
-
-```
-
 ## Slicing
 
 If you had a very long text, such as the entire text of the State of the Union, you might only want to look at the first few characters. In Python, this is called by slicing.
