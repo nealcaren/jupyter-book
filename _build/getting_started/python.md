@@ -479,9 +479,9 @@ sentence_length
 ```
 
 
-<div class="alert alert-info">
+<div class="alert alert-success" role="alert">
 <h3> Your turn</h3>
-<p> What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.
+<p> What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.</p>
 
 </div>
 
