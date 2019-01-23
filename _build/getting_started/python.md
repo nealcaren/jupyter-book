@@ -196,14 +196,6 @@ lower_sentence
 ### Your turn
 Create a new, lower cased version of your <code>food</code> string.
 
-
-
-{:.input_area}
-```python
- 
-```
-
-
 We can also `replace` words within the string.
 
 
@@ -443,7 +435,7 @@ sentence[-20:]
 
 ### Your turn
 Create a new string called `s` that contains `The weather is hot and humid today.` Find the slices for each of the following :
-* "The we"
+* "The w"
 * "today."
 * "hot and humid"
 
