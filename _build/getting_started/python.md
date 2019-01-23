@@ -20,7 +20,7 @@ This section introduces some of the most relevant aspects of working with Python
 
 In 2009, as part of his first State of the Union address, President Barack Obama said: 
 
-> Democracy in a nation of 300 million people can be noisy and messy and complicated. 
+> Let us invest in our people without leaving them a mountain of debt
 
 To store that in Python, create a new variable called `sentence`
 
@@ -126,6 +126,15 @@ Create a new string called <code>food</code>  that is a sentence about your most
 {:.input_area}
 ```python
  
+```
+
+
+
+
+{:.input_area}
+```python
+food = 'My standard lunch is a veggie burrito.'
+print(food)
 ```
 
 
