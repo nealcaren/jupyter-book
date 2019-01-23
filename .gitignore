@@ -107,3 +107,6 @@ _site/
 # Test builds
 scripts/tests/site/_build
 scripts/tests/site/content/LICENSE.md
+content/hiding.ipynb
+content/.DS_Store
+.DS_Store

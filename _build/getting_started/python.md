@@ -131,7 +131,7 @@ Create a new string called <code>food</code>  that is a sentence about your most
 
 
 
-{:.input_area}
+{:.input_area .hidecode}
 ```python
 food = 'My standard lunch is a veggie burrito.'
 print(food)
@@ -491,9 +491,8 @@ sentence_length
 ```
 
 
-<div class="alert alert-success" role="alert">
-<h3> Your turn</h3>
-<p> What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.</p>
+### Your turn
+What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.
 
 
 Since this is a number, we can do standard math operations with it.
