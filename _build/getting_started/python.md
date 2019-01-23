@@ -205,6 +205,18 @@ lower_sentence
 ### Your turn
 Create a new, lower cased version of your <code>food</code> string.
 
+
+
+{:.input_area}
+```python
+
+lower_food = food.lower()
+
+print(lower_food)
+
+```
+
+
 We can also `replace` words within the string.
 
 
@@ -483,7 +495,6 @@ sentence_length
 <h3> Your turn</h3>
 <p> What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.</p>
 
-</div>
 
 Since this is a number, we can do standard math operations with it.
 
