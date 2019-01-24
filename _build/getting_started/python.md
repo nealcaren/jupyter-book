@@ -12,8 +12,11 @@ next_page:
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-## Python 101
+*If you click the Interactive button above, you can run the code on this page and complete each of the exercises. If you click the Notebook button, you will be redirected to an interactive Jupyter notebook. Both of these options are powered by [Binder](https://mybinder.org).*
 
+*The answers to each of the exercises can be revealed by selecting the plus button on the right side of the page below each exercise.*
+
+## Python 101
 
 
 This section introduces some of the most relevant aspects of working with Python for social scientists. This includes the different data types available and ways to modify them. 
@@ -138,6 +141,12 @@ print(food)
 ```
 
 
+{:.output .output_stream}
+```
+My standard lunch is a veggie burrito.
+
+```
+
 ## Strings
 
 Python has a few tools for manipulating text, such as `lower` for making the string lower-case.
@@ -208,6 +217,14 @@ Create a new, lower cased version of your <code>food</code> string.
 
 
 {:.input_area}
+```python
+ 
+```
+
+
+
+
+{:.input_area .hidecode}
 ```python
 
 lower_food = food.lower()
@@ -329,6 +346,16 @@ Create a new string called <code>boring</code> that removes the exclamation mark
 {:.input_area}
 ```python
  
+```
+
+
+
+
+{:.input_area .hidecode}
+```python
+boring = "Way to go!!!".lower().replace('!', '')
+
+print(boring)
 ```
 
 
@@ -461,6 +488,26 @@ Create a new string called `s` that contains `The weather is hot and humid today
 * "hot and humid"
 
 
+
+
+{:.input_area .hidecode}
+```python
+s = 'The weather is hot and humid today.'
+
+print(s[:5])
+print(s[-6:])
+print(s[15:28])
+```
+
+
+{:.output .output_stream}
+```
+The w
+today.
+hot and humid
+
+```
+
 #### Numbers
 
 We can also count the number of characters in a string with the `len` function.
@@ -471,6 +518,16 @@ We can also count the number of characters in a string with the `len` function.
 ```python
 len(sentence)
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+68
+```
+
 
 
 In this case, Python returned an interger instead of string. This also can be stored in a variable.
@@ -491,8 +548,36 @@ sentence_length
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+68
+```
+
+
+
 ### Your turn
 What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.
+
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
+
+
+{:.input_area .hidecode}
+```python
+question = 'How many dogs do you own?'
+sl = len(question)
+print(sl)
+```
 
 
 Since this is a number, we can do standard math operations with it.
@@ -505,6 +590,12 @@ print(sentence_length * 3)
 ```
 
 
+{:.output .output_stream}
+```
+204
+
+```
+
 
 
 {:.input_area}
@@ -512,6 +603,12 @@ print(sentence_length * 3)
 print(sentence_length / 2)
 ```
 
+
+{:.output .output_stream}
+```
+34.0
+
+```
 
 
 
@@ -521,11 +618,22 @@ print(sentence_length + sentence_length)
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> What is one-third the length of <code>sl</code>.
+{:.output .output_stream}
+```
+136
 
-</div>
+```
+
+### Your turn
+What is one-third the length of <code>sl</code>?
+
+
+
+{:.input_area .hidecode}
+```python
+sl/3
+```
+
 
 As with strings, these can be saved in new variables.
 
@@ -539,6 +647,12 @@ print(double_length)
 ```
 
 
+{:.output .output_stream}
+```
+136
+
+```
+
 These same operators also work with strings.
 
 
@@ -549,6 +663,12 @@ print(sentence * 2)
 ```
 
 
+{:.output .output_stream}
+```
+Let us invest in our people without leaving them a mountain of debt.Let us invest in our people without leaving them a mountain of debt.
+
+```
+
 
 
 {:.input_area}
@@ -556,6 +676,12 @@ print(sentence * 2)
 print(sentence + sentence)
 ```
 
+
+{:.output .output_stream}
+```
+Let us invest in our people without leaving them a mountain of debt.Let us invest in our people without leaving them a mountain of debt.
+
+```
 
 The operators can't be used to combine different data types, however.
 
@@ -567,7 +693,31 @@ print("The sentence was " + sentence_length + "characters.")
 ```
 
 
-Conviently, Python the `str` function will convert an interger to a string.
+
+{:.output .output_traceback_line}
+```
+---------------------------------------------------------------------------
+```
+
+{:.output .output_traceback_line}
+```
+TypeError                                 Traceback (most recent call last)
+```
+
+{:.output .output_traceback_line}
+```
+<ipython-input-63-9041347a8e39> in <module>
+----> 1 print("The sentence was " + sentence_length + "characters.")
+
+```
+
+{:.output .output_traceback_line}
+```
+TypeError: can only concatenate str (not "int") to str
+```
+
+
+Conviently, the `str` function will convert an interger to a string.
 
 
 
@@ -576,6 +726,12 @@ Conviently, Python the `str` function will convert an interger to a string.
 print("The sentence was " + str(sentence_length) + " characters.")
 ```
 
+
+{:.output .output_stream}
+```
+The sentence was 68 characters.
+
+```
 
 I manually had to include the spaces before and after `sentence_length`. Otherwise, it all is smushed together. 
 
@@ -587,15 +743,38 @@ print("The sentence was" + str(sentence_length) + "characters.")
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p>Print <code>The length of the word "hippopotamus" is [x].</code> where <code>[x]</code> is the length of the word hippopotamus  .
+{:.output .output_stream}
+```
+The sentence was68characters.
 
-</div>
+```
 
-#### Lists
+### Your turn
 
-We can also `split` the sentence into a series of strings. By default, this splits based on spaces and other whitespace characters such as a line break (`\n`) or tab character (`\t`). 
+Print `The length of the word "hippopotamus" is [x].` where `[x]` is the length of the word hippopotamus  .
+
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
+
+
+{:.input_area .hidecode}
+```python
+l = len('hippopotamus')
+
+print('The length of the word "hippopotamus" is ' + str(l) + '.')
+```
+
+
+## Lists
+
+You can also `split` the sentence into a series of strings. By default, this splits based on spaces and other whitespace characters such as a line break (`\n`) or tab character (`\t`). 
 
 
 
@@ -604,6 +783,12 @@ We can also `split` the sentence into a series of strings. By default, this spli
 print(sentence.split())
 ```
 
+
+{:.output .output_stream}
+```
+['Let', 'us', 'invest', 'in', 'our', 'people', 'without', 'leaving', 'them', 'a', 'mountain', 'of', 'debt.']
+
+```
 
 What is returned here is a third data type (the first two were strings and intergers) called a list. A list is enclosed in brackets (`[]`) and the items are seperated by commas. In this case each item is in quotation marks because they are all strings. Items in a list, however, can be of any sort.
 
@@ -614,6 +799,16 @@ What is returned here is a third data type (the first two were strings and inter
 my_list = ['Speeches', 7, 'Data']
 my_list
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+['Speeches', 7, 'Data']
+```
+
 
 
 While `len` returned the number of characters in a string, it returns the number the items in a list.
@@ -628,6 +823,16 @@ len(my_list)
 
 
 
+
+{:.output .output_data_text}
+```
+3
+```
+
+
+
+
+
 {:.input_area}
 ```python
 sentence_length = len(sentence.split())
@@ -635,15 +840,40 @@ sentence_length
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+13
+```
+
+
+
 In the second example, the list created by `sentence.split()` is not saved in any way; only its length.
 
+#### Your turn
+Create a list called **ate** that includes at least three things you ate today. Use `len` to count the number of items in the list.
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a list called <code>food</code> that includes at least three things you ate today. Use <code>len</code> to count the number of items in the list.
 
-</div>
 
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
+
+
+{:.input_area .hidecode}
+```python
+ate = ['apple', 'dosa', 'pizza slice']
+
+print(len(ate))
+```
 
 
 Like, strings, lists can also be sliced. The first three items of a list:
@@ -657,6 +887,12 @@ print(words[:3])
 ```
 
 
+{:.output .output_stream}
+```
+['Let', 'us', 'invest']
+
+```
+
 We can also extract specific items from a list by their position. As it did with strings, slicing in Python starts with 0.
 
 
@@ -667,14 +903,34 @@ words[0]
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'Let'
+```
+
+
+
 The third word:
 
 
 
 {:.input_area}
 ```python
-words[3]
+words[2]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'invest'
+```
+
 
 
 The fifth word from the end:
@@ -685,6 +941,16 @@ The fifth word from the end:
 ```python
 words[-5]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'them'
+```
+
 
 
 The last two words:
@@ -698,12 +964,25 @@ words[-2:]
 
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p>Display the first two items of your <code>food</code> list. What is the last item?
 
-</div>
 
+{:.output .output_data_text}
+```
+['of', 'debt.']
+```
+
+
+
+### Your turn
+Display the first two items of your **ate** list. What is the last item?
+
+
+
+
+{:.input_area}
+```python
+ 
+```
 
 
 Unlike a string, lists are mutable. That means that we can remove or as is more frequently the case text analysis, add things to it. This is done with `append`.
