@@ -580,7 +580,7 @@ print(sl)
 ```
 
 
-Since this is a number, we can do standard math operations with it.
+Since the length of a string  is a number, we can do standard math operations with it.
 
 
 
@@ -985,6 +985,24 @@ Display the first two items of your **ate** list. What is the last item?
 ```
 
 
+
+
+{:.input_area .hidecode}
+```python
+print(ate[:2])
+print(ate[-1])
+```
+
+
+{:.output .output_stream}
+```
+['apple', 'dosa']
+pizza slice
+
+```
+
+Slicing a list returns a list. If you ask for the first three items, you will get a list made up of those items. In contrast, if your request a specific location, such as `words[2]`, Python returns the specific object stored in the place, which may be a string, number, or event an entire list. 
+
 Unlike a string, lists are mutable. That means that we can remove or as is more frequently the case text analysis, add things to it. This is done with `append`.
 
 
@@ -997,6 +1015,12 @@ print(male_words)
 ```
 
 
+{:.output .output_stream}
+```
+['his', 'him', 'father', 'brother']
+
+```
+
 Since `append` is changing `male_words`, we do not want to use an `=`. The Python interpreter is editing our original list but not returning anything.
 
 
@@ -1008,6 +1032,12 @@ print(not_going_to_work)
 ```
 
 
+{:.output .output_stream}
+```
+None
+
+```
+
 Lists can be also be combined using `+`.
 
 
@@ -1018,6 +1048,12 @@ gendered_words = male_words + ['her', 'she', 'mother']
 print(gendered_words)
 ```
 
+
+{:.output .output_stream}
+```
+['his', 'him', 'father', 'brother', 'brother', 'her', 'she', 'mother']
+
+```
 
 As note above, the items in a list can include a variety of data types. This includes lists.
 
@@ -1039,6 +1075,16 @@ len(gendered_lists)
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+2
+```
+
+
+
 `gendered_lists` has a length of two because it contains just two items, each a list of varying lengths.
 
 
@@ -1049,17 +1095,25 @@ print(gendered_lists)
 ```
 
 
+{:.output .output_stream}
+```
+[['his', 'him', 'father', 'brother', 'brother'], ['her', 'she', 'mother']]
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Add three more items to your <code>food</code>list. Use <code>append</code> for one. 
+```
+
+### Your turn
+Add three more items to your `food` list. Use `append` for one. 
 For the other two, places them in a list and then combine the two lists. 
 
-</div>
 
 
+{:.input_area .hidecode}
+```python
+# solution
+```
 
-#### Dictionaries
+
+### Dictionaries
 
 A fourth useful data type is a dictionary. A dictionary is like a list in that it holds multiples items. The items in a list can be identified by their position in the list. In contrast, the values in a dictionary are associated with a keyword. The analogy here is a to a physical dictionary, which has a list of unique words, and each word has a definition. In this case, the entries are called keys, and the definitions, which can be any data type, are called values. 
 
@@ -1079,7 +1133,7 @@ Dictionaries are surrounded by curly brackets (`{}`). Each entry is pair consist
 
 
 
-We can access the contents of a dictionary by enclosing the key in brackets (`[]`).
+You can access the contents of a dictionary by enclosing the key in brackets (`[]`).
 
 
 
@@ -1089,6 +1143,16 @@ respondent['sex']
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'female'
+```
+
+
+
 If the key is not dictionary, you will get a `KeyError`.
 
 
@@ -1096,6 +1160,30 @@ If the key is not dictionary, you will get a `KeyError`.
 {:.input_area}
 ```python
 respondent['gender']
+```
+
+
+
+{:.output .output_traceback_line}
+```
+---------------------------------------------------------------------------
+```
+
+{:.output .output_traceback_line}
+```
+KeyError                                  Traceback (most recent call last)
+```
+
+{:.output .output_traceback_line}
+```
+<ipython-input-10-4da2e0df882d> in <module>
+----> 1 respondent['gender']
+
+```
+
+{:.output .output_traceback_line}
+```
+KeyError: 'gender'
 ```
 
 
@@ -1111,10 +1199,30 @@ respondent.keys()
 
 
 
+
+{:.output .output_data_text}
+```
+dict_keys(['sex', 'abany', 'educ'])
+```
+
+
+
+
+
 {:.input_area}
 ```python
 len(respondent.keys())
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+3
+```
+
 
 
 Dictionaries are mutable, so we can change the value of existing keys, remove keys, or add new ones.
@@ -1129,6 +1237,12 @@ print(respondent)
 ```
 
 
+{:.output .output_stream}
+```
+{'sex': 'female', 'abany': 1, 'educ': 'College', 'race': 'Black'}
+
+```
+
 
 
 {:.input_area}
@@ -1139,14 +1253,36 @@ print(respondent)
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p>Add a new key to the dictionary called <code>age</code> with a value of 37. Confirm that you did it correctly by dispaying the value of <code>age</code>.
+{:.output .output_stream}
+```
+{'sex': 'female', 'abany': 'Yes', 'educ': 'College', 'race': 'Black'}
 
-</div>
+```
+
+### Your turn
+Add a new key to the dictionary called `age` with a value of 37. Confirm that you did it correctly by displaying the value of `age`.
 
 
-As noted above, while the keys have to be strings, the values can be any data type.
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
+
+
+{:.input_area .hidecode}
+```python
+respondent['age'] = 37
+
+print(respondent['age'])
+```
+
+
+As noted above, while the keys have to be strings, the values can be any data type. You could add the ages of the respondent's children as a list.
 
 
 
@@ -1158,7 +1294,13 @@ print(respondent)
 ```
 
 
-#### Spaces
+{:.output .output_stream}
+```
+{'sex': 'female', 'abany': 'Yes', 'educ': 'College', 'race': 'Black', 'age': 37, 'children ages': [3, 5, 10]}
+
+```
+
+## Spaces
 
 
 Within the Python community, there are strong norms about how code should be written. Many of these are centered around have code be readable, both by others and by your future self. As a trivial example, `2+2` is allowed, by is almost always written `2 + 2`. Likewise I defined my respondent dictionary with plenty of white space in order to maximize readability.
@@ -1216,6 +1358,19 @@ respondents
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+[{'sex': 'female', 'abany': 1, 'educ': 'College'},
+ {'sex': 'male', 'abany': 1, 'educ': 'College'},
+ {'sex': 'female', 'abany': 0, 'educ': 'High School'},
+ {'sex': 'male', 'abany': 0, 'educ': 'Some College'}]
+```
+
+
+
 This is now looks a lot like the common data format JSON!
 
 ### Loops
@@ -1229,6 +1384,15 @@ for person in respondents:
 ```
 
 
+{:.output .output_stream}
+```
+College
+College
+High School
+Some College
+
+```
+
 
 
 {:.input_area}
@@ -1238,13 +1402,34 @@ for item in [1,2,'bobcat']:
 ```
 
 
+{:.output .output_stream}
+```
+1
+2
+bobcat
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Loop over the items in your <code>food</code> list. For each item, print its length.
+```
 
-</div>
+#### Your turn
 
+Loop over the items in your `food` list. For each item, print its length.
+
+
+
+
+
+{:.input_area}
+```python
+ 
+```
+
+
+
+
+{:.input_area .hidecode}
+```python
+# Answer
+```
 
 
 
@@ -1279,6 +1464,16 @@ make_hello()
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'Hello!'
+```
+
+
+
 More commonly in text analysis, a user-defined function modifies an existing string. In this case, the variable name that will be used within the function is established within the parenthesis on the opening line. 
 
 A second trivial function takes a text string and returns an all-caps version. 
@@ -1301,6 +1496,16 @@ scream('Hi there!')
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'HI THERE!'
+```
+
+
+
 The `text` and `text_upper` variable only exist within the function. That means that you can pass a variable not called `text` to the function.
 
 
@@ -1311,6 +1516,16 @@ scream(sentence)
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'LET US INVEST IN OUR PEOPLE WITHOUT LEAVING THEM A MOUNTAIN OF DEBT.'
+```
+
+
+
 It also means that everything but the returned `text` disappears.
 
 
@@ -1318,6 +1533,30 @@ It also means that everything but the returned `text` disappears.
 {:.input_area}
 ```python
 text_upper
+```
+
+
+
+{:.output .output_traceback_line}
+```
+---------------------------------------------------------------------------
+```
+
+{:.output .output_traceback_line}
+```
+NameError                                 Traceback (most recent call last)
+```
+
+{:.output .output_traceback_line}
+```
+<ipython-input-37-9374ae9251ac> in <module>
+----> 1 text_upper
+
+```
+
+{:.output .output_traceback_line}
+```
+NameError: name 'text_upper' is not defined
 ```
 
 
@@ -1334,14 +1573,13 @@ def scream(text):
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Make a function call "whisper" that replaces all exclamation marks with a period and returns a lower case version of a string. Test it out.
-</div>
+#### Your turn
+
+Make a function called `whisper` that replaces all exclamation marks with a period and returns a lower case version of a string. Test it out.
 
 
 
-{:.input_area}
+{:.input_area .hidecode}
 ```python
 def whisper(text):
     ''''''
