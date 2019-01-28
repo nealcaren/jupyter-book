@@ -21,8 +21,8 @@ author: Neal Caren
 description: >- # this means to ignore newlines until "baseurl:"
   Basics of text mining in Python..
 
-baseurl: "/textminingwithpython" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
-url: "http://nealcaren.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
+url: "http://www.textminingwithpython.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #######################################################################################
