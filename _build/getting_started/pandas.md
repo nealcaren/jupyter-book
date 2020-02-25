@@ -2,6 +2,7 @@
 redirect_from:
   - "getting-started/pandas"
 interact_link: content/getting_started/pandas.ipynb
+kernel_name: python3
 title: 'pandas 101'
 prev_page:
   url: /getting_started/python
@@ -11,8 +12,6 @@ next_page:
   title: 'Collecting texts'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-
-
 This section provides a brief introduction to pandas. The pandas library is a key component for doing data science in Python for a couple of reasons. Most importantly, it provides two data types, series and data frame, that allow you to store and manipulate data in a way that is useful for management and analysis. Second, pandas is incredibly useful for importing and exporting data in a wide variety of formats. Finally, it makes descriptive analysis, including both summary statistics and visualizations. This section provides an introduction to the main capabilities of pandas relevant to data analysis. 
 
 Most of the things that you will want to do it Python require importing libraries. convention, pandas is imported as `pd`. Additionally, we enable the ability for pandas graphics to be displayed within the notebook with `%matplotlib inline`. 

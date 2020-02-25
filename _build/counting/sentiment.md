@@ -1,5 +1,6 @@
 ---
 interact_link: content/counting/sentiment.ipynb
+kernel_name: python3
 title: 'Sentiment'
 prev_page:
   url: /counting/counting
@@ -9,17 +10,11 @@ next_page:
   title: 'Part of speech tagging'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
-
-### Sentiment Analysis
-
-
-
-
 A traditional method of analyzing texts is to compute the proportion of the words have positive connotations, negative connotations or are neutral. This method is commonly referred to as sentiment analysis. The typical approach to sentiment analysis is to see how many words in a text are also in a predefined list of words associated with a sentiment. So "I am having a bad day." might score a "1" on a negative sentiment scale for the presence of "bad" or a .17 because one of six of the words is negative. Some sentiment systems rank words on a scale, so that "terrific" might be a 5 while "fine" scores a 1. 
 
-Some systems go beyond positive and negative. The proprietary LIWC program, for example, extends this to measure dozens of other word attributes, such as "tone", "analytic thinking", and "clout". More generally, these methods can be used whenever you have a list of words, and you want to count their occurrences in a set of texts.
+Some systems go beyond positive and negative. The proprietary LIWC program, for example, extends this to measure dozens of other word attributes, such as "tone", "analytic thinking", and "clout". More generally, these methods can be used whenever you have a list of words, and you want to count their occurrences in a set of texts. They are commonly referred to as "dictionary methods."
 
-This lesson introduces two different dictionaries that are available in Python, AFINN, and Vader. It concludes by showing how to analyze a text corpus for occurrences on  an arbitrary word list.
+This lesson introduces two different dictionaries that are available in Python, AFINN, and Vader. It concludes by showing how to analyze a text corpus for occurrences on any arbitrary word list.
 
 This lesson assumes your computer has an Anaconda Python 3.7 distribution installed.
 
@@ -107,9 +102,11 @@ afinn.score('Horrible, bad day.')
 
 
 
-Before using a sentiment dictionary, it is useful to see whether it is has any face validity.  To do that, we can look at a sample of the words from the list.
+In all these cases, `afinn` has preprocessed the text by removing the punctuation, converting all the words to lower-case, and before analyzing it. 
 
-After importing the pandas library, the cell below will load word list as a pandas dataframe from the tab-delimited version on Afinn's GitHub page and display a sample of 20 words.
+ Before using a sentiment dictionary, it is useful to see whether it is has any face validity.  To do that, we can look at a sample of the words from the list.
+
+After importing the pandas library, the cell below will load word list as a pandas dataframe from the tab-delimited version on Afinn's GitHub page and display a sample of 10 words.
 
 
 
@@ -121,11 +118,12 @@ afinn_wl_url = ('https://raw.githubusercontent.com'
                 '/fnielsen/afinn/master/afinn/data/AFINN-111.txt')
 
 afinn_wl_df = pd.read_csv(afinn_wl_url, 
-                          header=None, 
-                          sep='\t', 
-                          names=['term', 'value'])
+                          header=None, # no column names
+                          sep='\t',  # tab sepeated
+                          names=['term', 'value']) #new column names
 
-afinn_wl_df.sample(20)
+seed = 808 # seed for sample so results are stable
+afinn_wl_df.sample(10, random_state = seed)
 ```
 
 
@@ -157,104 +155,54 @@ afinn_wl_df.sample(20)
   </thead>
   <tbody>
     <tr>
-      <th>1700</th>
-      <td>persecutes</td>
+      <th>1852</th>
+      <td>regret</td>
       <td>-2</td>
     </tr>
     <tr>
-      <th>1143</th>
-      <td>hardier</td>
-      <td>2</td>
+      <th>1285</th>
+      <td>indifferent</td>
+      <td>-2</td>
     </tr>
     <tr>
-      <th>1219</th>
-      <td>humiliated</td>
-      <td>-3</td>
+      <th>681</th>
+      <td>disappoints</td>
+      <td>-2</td>
     </tr>
     <tr>
-      <th>427</th>
-      <td>collide</td>
+      <th>770</th>
+      <td>doubts</td>
       <td>-1</td>
     </tr>
     <tr>
-      <th>768</th>
-      <td>doubtful</td>
+      <th>1644</th>
+      <td>outmaneuvered</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>admit</td>
       <td>-1</td>
     </tr>
     <tr>
-      <th>716</th>
-      <td>disorganized</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>1380</th>
-      <td>jocular</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>998</th>
-      <td>flops</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>494</th>
-      <td>controversially</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>1002</th>
-      <td>fond</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>174</th>
-      <td>arrogant</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>662</th>
-      <td>dilemma</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>1504</th>
-      <td>meaningful</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>accusation</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>1610</th>
-      <td>nosey</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>2122</th>
-      <td>stimulating</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1833</th>
-      <td>ratified</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>809</th>
-      <td>eerie</td>
-      <td>-2</td>
-    </tr>
-    <tr>
-      <th>375</th>
-      <td>charm</td>
+      <th>1133</th>
+      <td>haha</td>
       <td>3</td>
     </tr>
     <tr>
-      <th>1534</th>
-      <td>misinterpreted</td>
-      <td>-2</td>
+      <th>1160</th>
+      <td>haunt</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2435</th>
+      <td>wishing</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>abused</td>
+      <td>-3</td>
     </tr>
   </tbody>
 </table>
@@ -262,6 +210,8 @@ afinn_wl_df.sample(20)
 </div>
 
 
+
+We can get a sense of the distribution of word values by plotting them:
 
 
 
@@ -278,58 +228,36 @@ afinn_wl_df['value'].hist()
 
 {:.output .output_data_text}
 ```
-<matplotlib.axes._subplots.AxesSubplot at 0x1107b94a8>
+<matplotlib.axes._subplots.AxesSubplot at 0x119d0d198>
 ```
 
 
 
 
 {:.output .output_png}
-![png](../images/counting/sentiment_13_1.png)
+![png](../images/counting/sentiment_14_1.png)
 
 
 
-We can use Afinn to analyze a larger text database.  Aashita Kesarwani put together a [corpus](https://www.kaggle.com/aashita/nyt-comments/home) of comments made to New York Times articles. I sampled 10,000 of these from April, 2017.  
+Overall, the dictionary appears to have more negative words than positive words, but the values for both positive and negative words are rarely extreme, with both two and negative two as the most common values.
 
-Before opening this as a dataframe, I import pandas and enable graphs to be displayed in the Jupyter notebook.
+## Applying the dictionary
 
-
-
-{:.input_area}
-```python
-nyt_df = pd.read_json('data/nyt_201704_comments.json')
-```
+We can use Afinn to analyze a larger text database.  Aashita Kesarwani put together a [corpus](https://www.kaggle.com/aashita/nyt-comments/home) of comments made to New York Times articles. I sampled 10,000 of these from April, 2017 and stored them as a JSON file.
 
 
 
 
 {:.input_area}
 ```python
-nyt_df.info()
+json_url = ('https://github.com/nealcaren/osscabd_2018/'
+            'blob/master/notebooks/data/nyt_201704_comments.json?raw=true')
+
+nyt_df = pd.read_json(json_url)
 ```
 
 
-{:.output .output_stream}
-```
-<class 'pandas.core.frame.DataFrame'>
-Int64Index: 10000 entries, 0 to 9999
-Data columns (total 12 columns):
-articleID           10000 non-null object
-commentBody         10000 non-null object
-commentID           10000 non-null int64
-commentType         10000 non-null object
-createDate          10000 non-null int64
-editorsSelection    10000 non-null bool
-recommendations     10000 non-null int64
-replyCount          10000 non-null int64
-sectionName         10000 non-null object
-userDisplayName     9997 non-null object
-userID              10000 non-null int64
-userLocation        9999 non-null object
-dtypes: bool(1), int64(5), object(6)
-memory usage: 947.3+ KB
-
-```
+The `head` method provides an overview of the dataframe.
 
 
 
@@ -458,7 +386,9 @@ nyt_df.head()
 
 
 
-To estimate the Afinn sentiment score for all of the responses in the dataframe, we can `apply` the scorer to create a new column. This takes a couple of seconds.
+The column of interest is *commentBody.* 
+
+To estimate the Afinn sentiment score for all of the responses in the dataframe, we can `apply` the scorer to the commentBody column to create a new column. This takes a couple of seconds.
 
 
 
@@ -592,6 +522,125 @@ nyt_df.sort_values(by='afinn_score')[columns_to_display].head(10)
 
 
 
+It could be useful to see more of the comment.
+
+
+
+{:.input_area}
+```python
+pd.set_option('max_colwidth', 100)
+```
+
+
+
+
+{:.input_area}
+```python
+nyt_df.sort_values(by='afinn_score')[columns_to_display].head(10)
+```
+
+
+
+
+
+<div markdown="0" class="output output_html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>commentBody</th>
+      <th>afinn_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>9348</th>
+      <td>Well Bill, nobody will be able to say that you and the New York Times didn't warn us. And warn u...</td>
+      <td>-130.0</td>
+    </tr>
+    <tr>
+      <th>5893</th>
+      <td>"Don’t Weaken Title IX Campus Sex Assault Policies"\nEveryone deserves to feel safe on campus an...</td>
+      <td>-62.0</td>
+    </tr>
+    <tr>
+      <th>1510</th>
+      <td>Would you describe (former prime minister of Israel) Menachem Begin as a terrorist? \n\nHere's p...</td>
+      <td>-54.0</td>
+    </tr>
+    <tr>
+      <th>3378</th>
+      <td>"I disapprove of what you say, but I will defend to the death your right to say it." ATTENTION d...</td>
+      <td>-54.0</td>
+    </tr>
+    <tr>
+      <th>3956</th>
+      <td>The ultimate weakness of violence is that it is a descending spiral, begetting the very thing it...</td>
+      <td>-52.0</td>
+    </tr>
+    <tr>
+      <th>9353</th>
+      <td>The “Dirty Muslim”\n\nShe is called a “Dirty Muslim”\nThe“Dirty Muslim” turned away in front of ...</td>
+      <td>-46.0</td>
+    </tr>
+    <tr>
+      <th>7788</th>
+      <td>Democracy and western civilization are doing just fine, but have temporarily lost their sea legs...</td>
+      <td>-43.0</td>
+    </tr>
+    <tr>
+      <th>4446</th>
+      <td>Immigrants\n\nImmigration purge\nEverybody is afraid.\nImmigrants fear law enforcement\nFear un...</td>
+      <td>-42.0</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Factual error: There has been no "rapid falloff of illegal crossings" since Trump assumed office...</td>
+      <td>-42.0</td>
+    </tr>
+    <tr>
+      <th>7571</th>
+      <td>This is all fine and dandy, except for the fact that these people made hundreds of millions of d...</td>
+      <td>-39.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+{:.input_area}
+```python
+sample = nyt_df.iloc[3956]['commentBody']
+print(sample)
+```
+
+
+{:.output .output_stream}
+```
+The ultimate weakness of violence is that it is a descending spiral, begetting the very thing it seeks to destroy. Instead of diminishing evil, it multiplies it. Through violence you may murder the liar, but you cannot murder the lie, nor establish the truth. Through violence you murder the hater, but you do not murder hate. In fact, violence merely increases hate ... Returning violence for violence multiples violence, adding deeper darkness to a night already devoid of stars. Darkness cannot drive out darkness; only light can do that. 
+
+~ Martin Luther King
+
+```
+
 By default, the sort is ascending, mean the lowest scoring, or most negative comments, are displayed by `head`. The comments with highest score are shown with `tail`. 
 
 
@@ -631,52 +680,52 @@ nyt_df.sort_values(by='afinn_score')[columns_to_display].tail(10)
   <tbody>
     <tr>
       <th>4949</th>
-      <td>Aside from the question of whether positive th...</td>
+      <td>Aside from the question of whether positive thinking works, there is a personal philosophical co...</td>
       <td>32.0</td>
     </tr>
     <tr>
       <th>3617</th>
-      <td>I found myself immensely enjoying this when I ...</td>
+      <td>I found myself immensely enjoying this when I went to see it. I was a big fan of the animated fi...</td>
       <td>33.0</td>
     </tr>
     <tr>
       <th>7912</th>
-      <td>How is prepping for the SATs gaming the system...</td>
+      <td>How is prepping for the SATs gaming the system? If you as you so subtly imply aced the SATs the ...</td>
       <td>34.0</td>
     </tr>
     <tr>
       <th>6085</th>
-      <td>"'You Create That Chemistry': How Actors Fall ...</td>
+      <td>"'You Create That Chemistry': How Actors Fall in Instant Love\n\nActors are everywhere in the cu...</td>
       <td>35.0</td>
     </tr>
     <tr>
       <th>3971</th>
-      <td>I'd like to see the discussion moved up a leve...</td>
+      <td>I'd like to see the discussion moved up a level.  I my view, in exchange for a corp. charter, we...</td>
       <td>37.0</td>
     </tr>
     <tr>
       <th>2523</th>
-      <td>His lawyers are grasping at straws.... In the ...</td>
+      <td>His lawyers are grasping at straws.... In the history of art I'm willing to bet one cannot find ...</td>
       <td>38.0</td>
     </tr>
     <tr>
       <th>3486</th>
-      <td>I applaud the spirit of this column and agree ...</td>
+      <td>I applaud the spirit of this column and agree one should approach politics with compassion for o...</td>
       <td>38.0</td>
     </tr>
     <tr>
       <th>8495</th>
-      <td>My goodness... This hit home for me in so many...</td>
+      <td>My goodness... This hit home for me in so many ways. I was (am) a Tomboy, who has grown into a s...</td>
       <td>39.0</td>
     </tr>
     <tr>
       <th>9717</th>
-      <td>When I look at the American actresses of Clair...</td>
+      <td>When I look at the American actresses of Claire Danes generation, it is a shame she ended up on ...</td>
       <td>41.0</td>
     </tr>
     <tr>
       <th>9205</th>
-      <td>"Driven | 2017 Porsche 911 Turbo S"\n\n  Since...</td>
+      <td>"Driven | 2017 Porsche 911 Turbo S"\n\n  Since I was born my Favorite thing to do is watch anyth...</td>
       <td>42.0</td>
     </tr>
   </tbody>
@@ -685,6 +734,27 @@ nyt_df.sort_values(by='afinn_score')[columns_to_display].tail(10)
 </div>
 
 
+
+
+
+{:.input_area}
+```python
+sample = nyt_df.iloc[3486]['commentBody']
+print(sample)
+```
+
+
+{:.output .output_stream}
+```
+I applaud the spirit of this column and agree one should approach politics with compassion for others with differing points of view -- a) because they may have little choice, given their life story, to believe what they believe; and b) they may be right.
+
+There is of course a compassionate center-right vision not comfortable with PC or identity politics (of any color or gender) that believes amping up tensions between groups is not a good idea, that believes decentralized markets will solve problems like healthcare in a much more humane way (by better saturating the distribution).
+
+These people might also oppose the attacks on free speech and due process on today's campus, the use of the govt to surveil people, and the way the media often sides in Orwellian fashion with whatever the statist vision is.
+
+These people are eminently sane and favor a longer-road humanism that results in a sustainable society with greater law and order (where people of all races can flourish in peace on calm streets) and wherein govt largesse can be brought in later in the pipeline after true market reforms have occurred to help make systems like education and healthcare more functional via the human desire to compete.
+
+```
 
 One of the drawbacks to using the raw Afinn score is the that longer texts may yield higher values simply because they contain more words. To adjust for that, we can divide the score by the number of words in the text. 
 
@@ -1025,7 +1095,7 @@ analyzer.polarity_scores('Horrible bad day.')
 
 {:.output .output_data_text}
 ```
-{'compound': -0.7906, 'neg': 0.875, 'neu': 0.125, 'pos': 0.0}
+{'neg': 0.875, 'neu': 0.125, 'pos': 0.0, 'compound': -0.7906}
 ```
 
 
@@ -1045,7 +1115,7 @@ analyzer.polarity_scores("At least it isn't a horrible book.")
 
 {:.output .output_data_text}
 ```
-{'compound': 0.431, 'neg': 0.0, 'neu': 0.637, 'pos': 0.363}
+{'neg': 0.0, 'neu': 0.637, 'pos': 0.363, 'compound': 0.431}
 ```
 
 
@@ -1065,7 +1135,7 @@ analyzer.polarity_scores('Today SUX!')
 
 {:.output .output_data_text}
 ```
-{'compound': -0.5461, 'neg': 0.779, 'neu': 0.221, 'pos': 0.0}
+{'neg': 0.779, 'neu': 0.221, 'pos': 0.0, 'compound': -0.5461}
 ```
 
 
@@ -1083,7 +1153,7 @@ analyzer.polarity_scores('💋')
 
 {:.output .output_data_text}
 ```
-{'compound': 0.4215, 'neg': 0.0, 'neu': 0.263, 'pos': 0.737}
+{'neg': 0.0, 'neu': 0.263, 'pos': 0.737, 'compound': 0.4215}
 ```
 
 
@@ -1608,7 +1678,7 @@ df_vaderized['vader_compound'].plot(kind='hist')
 
 
 {:.output .output_png}
-![png](../images/counting/sentiment_64_1.png)
+![png](../images/counting/sentiment_71_1.png)
 
 
 
@@ -1634,7 +1704,7 @@ df_vaderized.plot.scatter(x='vader_pos', y = 'vader_neg')
 
 
 {:.output .output_png}
-![png](../images/counting/sentiment_66_1.png)
+![png](../images/counting/sentiment_73_1.png)
 
 
 

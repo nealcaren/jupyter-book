@@ -24,7 +24,7 @@
   not_numbered: False
   sections:
   - title: Installation
-    url: placeholder
+    url: getting_started/setup
     not_numbered: true
   - title: Python 101
     url: getting_started/python
@@ -46,6 +46,9 @@
     not_numbered: true
   - title: Web Scraping
     url: collecting/scraping
+    not_numbered: true
+  - title: Twitter Data
+    url: collecting/twint
     not_numbered: true
 
 - title: Counting words
